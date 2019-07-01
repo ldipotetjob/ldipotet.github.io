@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Posts on No more than One Hundred and Sixty Six lines</title>
+		<title>Posts on No more than One Hundred and Sixty Six</title>
 		<link>https://ldipotetjob.github.io/posts/</link>
-		<description>Recent content in Posts on No more than One Hundred and Sixty Six lines</description>
+		<description>Recent content in Posts on No more than One Hundred and Sixty Six</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
@@ -15,9 +15,9 @@
 			<pubDate>Mon, 01 Jul 2019 11:36:33 +0800</pubDate>
 			
 			<guid>https://ldipotetjob.github.io/posts/pattern_matching1-8/</guid>
-			<description>Some examples of patterns are:1
+			<description>Some examples of patterns are:
  The pattern ex: IOException matches all instances of class IOException, binding variable ex to the instance. The pattern Some(x) matches values of the form Some(v), binding x to the argument value v of the Some constructor. The pattern (x, _) matches pairs of values, binding x to the first component of the pair. The second component is matched with a wildcard pattern. The pattern x :: y :: xs matches lists of length ≥2, binding x to the list&amp;rsquo;s first element, y to the list&amp;rsquo;s second element, and xs to the remainder.</description>
-			<content type="html"><![CDATA[<p>Some examples of patterns are:<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
+			<content type="html"><![CDATA[<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html">Some examples of patterns are:</a></p>
 
 <ol>
 <li>The pattern ex: IOException matches all instances of class  IOException, binding variable ex to the instance.</li>
@@ -29,11 +29,11 @@
 
 <hr />
 
-<p>Variable Patterns:</p>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#variable-patterns">Variable Patterns:</a></p>
 
 <blockquote>
 <p>SimplePattern   ::=  ‘_’<br />
-   |  varid <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
+   |  varid</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="nx">scala</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Random</span>
 <span class="nx">val</span> <span class="nx">x</span><span class="o">:</span> <span class="nx">Int</span> <span class="o">=</span> <span class="nx">Random</span><span class="p">.</span><span class="nx">nextInt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -54,11 +54,11 @@
 <span class="nx">matchTest</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">//res1: String = many
 </span><span class="c1"></span><span class="nx">matchTest</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//res2: String = one
 </span></code></pre></div>
-<p>Typed Patterns:</p>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#typed-patterns">Typed Patterns:</a></p>
 
 <blockquote>
 <p>Pattern1        ::=  varid ‘:’ TypePat<br />
-                    |  ‘_’ ‘:’ TypePat <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup></p>
+                    |  ‘_’ ‘:’ TypePat [^3]</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">val</span> <span class="nx">mystrType</span><span class="o">:</span> <span class="nb">String</span> <span class="o">=</span> <span class="s2">&#34;String value for Pattern matching&#34;</span>
 
@@ -82,10 +82,10 @@
 <span class="c1">// mystrType: String = String value for Pattern matching
 </span><span class="c1">// res3: String = String value: String value for Pattern matching
 </span></code></pre></div>
-<p>Pattern Binders:</p>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#pattern-binders">Pattern Binders:</a></p>
 
 <blockquote>
-<p>Pattern2        ::=  varid ‘@’ Pattern3 <sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup></p>
+<p>Pattern2        ::=  varid ‘@’ Pattern3</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
 </span><span class="cm">  *   
@@ -117,10 +117,10 @@
   <span class="k">case</span> <span class="nx">_</span> <span class="p">=&gt;</span><span class="s2">&#34;no optStrValue&#34;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Literal Patterns:</p>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#literal-patterns">Literal Patterns:</a></p>
 
 <blockquote>
-<p>SimplePattern   ::=  StableId <sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup></p>
+<p>SimplePattern   ::=  StableId</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">val</span> <span class="nx">literalPattern</span><span class="o">:</span> <span class="nx">Any</span> <span class="o">=</span> <span class="kc">true</span>
 
@@ -131,10 +131,10 @@
 
 <span class="p">}</span>
 </code></pre></div>
-<p>Stable Identifier Patterns:</p>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#stable-identifier-patterns">Stable Identifier Patterns:</a></p>
 
 <blockquote>
-<p>SimplePattern   ::=  StableId <sup class="footnote-ref" id="fnref:6"><a href="#fn:6">6</a></sup></p>
+<p>SimplePattern   ::=  StableId [^6]</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">def</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span> <span class="nx">Int</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">Int</span><span class="p">)</span> <span class="o">=</span> <span class="nx">x</span> <span class="nx">match</span> <span class="p">{</span>
 
@@ -174,10 +174,10 @@
 <span class="c1">// It was a
 </span><span class="c1">// res12: Unit = ()
 </span></code></pre></div>
-<p>Constructor Patterns:</p>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#constructor-patterns">Constructor Patterns:</a></p>
 
 <blockquote>
-<p>SimplePattern   ::=  StableId ‘(’ [Patterns] ‘)’ <sup class="footnote-ref" id="fnref:7"><a href="#fn:7">7</a></sup></p>
+<p>SimplePattern   ::=  StableId ‘(’ [Patterns] ‘)’ [^7]</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
 </span><span class="cm">  * there are better implementations for these examples but the main idea is the explanation
@@ -218,10 +218,10 @@
 <span class="c1">//the Teacher:Jose Luis is 18 old and born 28 feb 1971
 </span><span class="c1">//res14: Unit = ()
 </span></code></pre></div>
-<p>Tuple Patterns:</p>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#tuple-patterns">Tuple Patterns:</a></p>
 
 <blockquote>
-<p>SimplePattern   ::=  ‘(’ [Patterns] ‘)’ <sup class="footnote-ref" id="fnref:8"><a href="#fn:8">8</a></sup></p>
+<p>SimplePattern   ::=  ‘(’ [Patterns] ‘)’</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
 </span><span class="cm">  * For this specification you&#39;ll need to know what is Tuple in scala.
@@ -250,10 +250,10 @@
 <span class="c1">//we are talking about the ingredients:Sugar
 </span><span class="c1">//res16: Unit = ()
 </span></code></pre></div>
-<p>Extractor Patterns:</p>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#extractor-patterns">Extractor Patterns:</a></p>
 
 <blockquote>
-<p>SimplePattern   ::=  StableId ‘(’ [Patterns] ‘)’ <sup class="footnote-ref" id="fnref:9"><a href="#fn:9">9</a></sup></p>
+<p>SimplePattern   ::=  StableId ‘(’ [Patterns] ‘)’</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// For a better understanding of this pattern I recommend to read the following next link:
 </span><span class="c1">// https://docs.scala-lang.org/tour/extractor-objects.html
@@ -300,32 +300,7 @@
     <span class="k">case</span> <span class="nx">_</span>  <span class="p">=&gt;</span> <span class="nx">println</span><span class="p">(</span><span class="s2">&#34;Could be any one, No teacher or Person&#34;</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:1">Pattern matching scala spec from <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html</a>
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">Variable Patterns from <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#variable-patterns">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#variable-patterns</a>
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-<li id="fn:3">Typed Patterns from <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#typed-patterns">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#typed-patterns</a>
- <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
-<li id="fn:4">Pattern Binders from <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#pattern-binders">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#pattern-binders</a>
- <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
-<li id="fn:5">Literal Patterns from <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#literal-patterns">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#literal-patterns</a>
- <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
-<li id="fn:6">Stable Identifier Patternsfrom <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#stable-identifier-patterns">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#stable-identifier-patterns</a>
- <a class="footnote-return" href="#fnref:6"><sup>[return]</sup></a></li>
-<li id="fn:7">Constructor Patterns from <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#constructor-patterns">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#constructor-patterns</a>
- <a class="footnote-return" href="#fnref:7"><sup>[return]</sup></a></li>
-<li id="fn:8">Tuple Patterns from <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#tuple-patterns">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#tuple-patterns</a>
- <a class="footnote-return" href="#fnref:8"><sup>[return]</sup></a></li>
-<li id="fn:9">Extractor Patterns from <a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#extractor-patterns">https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#extractor-patterns</a>
- <a class="footnote-return" href="#fnref:9"><sup>[return]</sup></a></li>
-</ol>
-</div>
-]]></content>
+</code></pre></div>]]></content>
 		</item>
 		
 	</channel>

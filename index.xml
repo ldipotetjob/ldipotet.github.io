@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>No more than One Hundred and Sixty Six lines</title>
+    <title>No more than One Hundred and Sixty Six</title>
     <link>https://ldipotetjob.github.io/</link>
-    <description>Recent content on No more than One Hundred and Sixty Six lines</description>
+    <description>Recent content on No more than One Hundred and Sixty Six</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Mon, 01 Jul 2019 11:36:33 +0800</pubDate>
       
       <guid>https://ldipotetjob.github.io/posts/pattern_matching1-8/</guid>
-      <description>Some examples of patterns are:1
+      <description>Some examples of patterns are:
  The pattern ex: IOException matches all instances of class IOException, binding variable ex to the instance. The pattern Some(x) matches values of the form Some(v), binding x to the argument value v of the Some constructor. The pattern (x, _) matches pairs of values, binding x to the first component of the pair. The second component is matched with a wildcard pattern. The pattern x :: y :: xs matches lists of length ≥2, binding x to the list&amp;rsquo;s first element, y to the list&amp;rsquo;s second element, and xs to the remainder.</description>
     </item>
     
@@ -29,7 +29,7 @@
       
       <guid>https://ldipotetjob.github.io/about-nomorethan166/</guid>
       <description>No more than 166 is a technical site, completely limited to scala specification in which if you delete texts and comments you will get a piece of code with no more than 166 lines . It&amp;rsquo;s just Scala by its specification. Each specification comes with a clear example and only one objective: to make everything as easy as possible. The Scala specification can be found at:
- Scala specifications repos.  So in the previous url you can find all the specifications of Scala.</description>
+ Scala specifications repos.  The proper version of scala specification is indicated on each post.</description>
     </item>
     
   </channel>
