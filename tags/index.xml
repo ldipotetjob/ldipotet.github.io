@@ -1,95 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Hugo Hermit</title>
+    <title>Tags on No more than One Hundred and Sixty Six lines</title>
     <link>https://ldipotetjob.github.io/tags/</link>
-    <description>Recent content in Tags on Hugo Hermit</description>
+    <description>Recent content in Tags on No more than One Hundred and Sixty Six lines</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 24 Dec 2018 12:29:41 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2019 11:36:33 +0800</lastBuildDate>
     
 	<atom:link href="https://ldipotetjob.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Demo</title>
-      <link>https://ldipotetjob.github.io/tags/demo/</link>
-      <pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate>
+      <title>Pattern Matching</title>
+      <link>https://ldipotetjob.github.io/tags/pattern-matching/</link>
+      <pubDate>Mon, 01 Jul 2019 11:36:33 +0800</pubDate>
       
-      <guid>https://ldipotetjob.github.io/tags/demo/</guid>
+      <guid>https://ldipotetjob.github.io/tags/pattern-matching/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Image</title>
-      <link>https://ldipotetjob.github.io/tags/image/</link>
-      <pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate>
+      <title>spec 2.12</title>
+      <link>https://ldipotetjob.github.io/tags/spec-2.12/</link>
+      <pubDate>Mon, 01 Jul 2019 11:36:33 +0800</pubDate>
       
-      <guid>https://ldipotetjob.github.io/tags/image/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Typography</title>
-      <link>https://ldipotetjob.github.io/tags/typography/</link>
-      <pubDate>Sat, 29 Sep 2018 11:36:33 +0800</pubDate>
-      
-      <guid>https://ldipotetjob.github.io/tags/typography/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>development</title>
-      <link>https://ldipotetjob.github.io/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ldipotetjob.github.io/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://ldipotetjob.github.io/tags/go/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ldipotetjob.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://ldipotetjob.github.io/tags/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ldipotetjob.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://ldipotetjob.github.io/tags/hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ldipotetjob.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>templates</title>
-      <link>https://ldipotetjob.github.io/tags/templates/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ldipotetjob.github.io/tags/templates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>themes</title>
-      <link>https://ldipotetjob.github.io/tags/themes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ldipotetjob.github.io/tags/themes/</guid>
+      <guid>https://ldipotetjob.github.io/tags/spec-2.12/</guid>
       <description></description>
     </item>
     
