@@ -28,7 +28,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ldipotetjob.github.io/about-nomorethan166/</guid>
-      <description>No more than 166 is a technical site, completely limited to scala specification and in which there is no article with more than 160 lines if you delete texts and comments. It&amp;rsquo;s just Scala by its specification. Each specification come with a clear example and only one objective: to make everything as easy as possible. The Scala specification can be found at:
+      <description>No more than 166 is a technical site, completely limited to scala specification in which if you delete texts and comments you will get a piece of code with no more than 166 lines . It&amp;rsquo;s just Scala by its specification. Each specification comes with a clear example and only one objective: to make everything as easy as possible. The Scala specification can be found at:
  Scala specifications repos.  So in the previous url you can find all the specifications of Scala.</description>
     </item>
     
