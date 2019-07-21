@@ -58,7 +58,7 @@
 
 <blockquote>
 <p>Pattern1        ::=  varid ‘:’ TypePat<br />
-                    |  ‘_’ ‘:’ TypePat [^3]</p>
+                    |  ‘_’ ‘:’ TypePat</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">val</span> <span class="nx">mystrType</span><span class="o">:</span> <span class="nb">String</span> <span class="o">=</span> <span class="s2">&#34;String value for Pattern matching&#34;</span>
 
@@ -134,7 +134,7 @@
 <p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#stable-identifier-patterns">Stable Identifier Patterns:</a></p>
 
 <blockquote>
-<p>SimplePattern   ::=  StableId [^6]</p>
+<p>SimplePattern   ::=  StableId</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">def</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span> <span class="nx">Int</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">Int</span><span class="p">)</span> <span class="o">=</span> <span class="nx">x</span> <span class="nx">match</span> <span class="p">{</span>
 
@@ -177,7 +177,7 @@
 <p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#constructor-patterns">Constructor Patterns:</a></p>
 
 <blockquote>
-<p>SimplePattern   ::=  StableId ‘(’ [Patterns] ‘)’ [^7]</p>
+<p>SimplePattern   ::=  StableId ‘(’ [Patterns] ‘)’</p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
 </span><span class="cm">  * there are better implementations for these examples but the main idea is the explanation
