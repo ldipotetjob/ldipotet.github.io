@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 01 Jul 2019 11:36:33 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2019 11:36:33 +0800</lastBuildDate>
     
 	<atom:link href="https://ldipotetjob.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pattern Matching-I</title>
+      <link>https://ldipotetjob.github.io/posts/pattern_matching9-14/</link>
+      <pubDate>Mon, 09 Sep 2019 11:36:33 +0800</pubDate>
+      
+      <guid>https://ldipotetjob.github.io/posts/pattern_matching9-14/</guid>
+      <description>Pattern matching specification
+This post covers the following patern matching specifications:
+ Pattern Sequences. Infix Operation Patterns. Pattern Alternatives. Irrefutable Patterns.  For previuos kinds of Pattern matching specifications review this link
+Pattern Sequences:
+ SimplePattern ::= StableId ‘(’ [Patterns ‘,’] [varid ‘@’] ‘_’ ‘*’ ‘)’
+ val testList:List[Int] = List(1,1) testList match { case List(1, _*) =&amp;gt; s&amp;#34;hello $testList&amp;#34; case _ =&amp;gt; &amp;#34; nothing match&amp;#34; } // res23: String = hello List(1, 1)  val testListbinding:List[Int] = List(1,1) testList match { case testList@List(1, _*) =&amp;gt; &amp;#34;a list beginning with 1, binding&amp;#34; case _ =&amp;gt; &amp;#34; nothing match binding&amp;#34; } // testListbinding: List[Int] = List(1, 1) // res24: String = a list beginning with 1, binding  testList match { case x @ List(1, _*) =&amp;gt; s&amp;#34;$x&amp;#34; case _ =&amp;gt; &amp;#34; nothing match binding&amp;#34; } // res25: String = List(1, 1)  Infix Operation Patterns:</description>
+    </item>
     
     <item>
       <title>Pattern Matching</title>

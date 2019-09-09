@@ -6,8 +6,207 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Mon, 01 Jul 2019 11:36:33 +0800</lastBuildDate>
+		<lastBuildDate>Mon, 09 Sep 2019 11:36:33 +0800</lastBuildDate>
 		<atom:link href="https://ldipotetjob.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Pattern Matching-I</title>
+			<link>https://ldipotetjob.github.io/posts/pattern_matching9-14/</link>
+			<pubDate>Mon, 09 Sep 2019 11:36:33 +0800</pubDate>
+			
+			<guid>https://ldipotetjob.github.io/posts/pattern_matching9-14/</guid>
+			<description>Pattern matching specification
+This post covers the following patern matching specifications:
+ Pattern Sequences. Infix Operation Patterns. Pattern Alternatives. Irrefutable Patterns.  For previuos kinds of Pattern matching specifications review this link
+Pattern Sequences:
+ SimplePattern ::= StableId ‘(’ [Patterns ‘,’] [varid ‘@’] ‘_’ ‘*’ ‘)’
+ val testList:List[Int] = List(1,1) testList match { case List(1, _*) =&amp;gt; s&amp;#34;hello $testList&amp;#34; case _ =&amp;gt; &amp;#34; nothing match&amp;#34; } // res23: String = hello List(1, 1)  val testListbinding:List[Int] = List(1,1) testList match { case testList@List(1, _*) =&amp;gt; &amp;#34;a list beginning with 1, binding&amp;#34; case _ =&amp;gt; &amp;#34; nothing match binding&amp;#34; } // testListbinding: List[Int] = List(1, 1) // res24: String = a list beginning with 1, binding  testList match { case x @ List(1, _*) =&amp;gt; s&amp;#34;$x&amp;#34; case _ =&amp;gt; &amp;#34; nothing match binding&amp;#34; } // res25: String = List(1, 1)  Infix Operation Patterns:</description>
+			<content type="html"><![CDATA[<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html">Pattern matching specification</a></p>
+
+<p>This post covers the following patern matching specifications:</p>
+
+<ol>
+<li>Pattern Sequences.</li>
+<li>Infix Operation Patterns.</li>
+<li>Pattern Alternatives.</li>
+<li>Irrefutable Patterns.</li>
+</ol>
+
+<p><a href="https://ldipotetjob.github.io/posts/pattern_matching1-8/">For previuos kinds of Pattern matching specifications review this link</a></p>
+
+<hr />
+
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#pattern-sequences">Pattern Sequences:</a></p>
+
+<blockquote>
+<p>SimplePattern ::= StableId ‘(’ [Patterns ‘,’] [varid ‘@’] ‘_’ ‘*’ ‘)’</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">val</span> <span class="nx">testList</span><span class="o">:</span><span class="nx">List</span><span class="p">[</span><span class="nx">Int</span><span class="p">]</span> <span class="o">=</span> <span class="nx">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nx">testList</span> <span class="nx">match</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nx">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">_</span><span class="o">*</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">s</span><span class="s2">&#34;hello $testList&#34;</span>
+  <span class="k">case</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="s2">&#34; nothing match&#34;</span>
+<span class="p">}</span>
+
+<span class="c1">// res23: String = hello List(1, 1)
+</span><span class="c1"></span>
+<span class="nx">val</span> <span class="nx">testListbinding</span><span class="o">:</span><span class="nx">List</span><span class="p">[</span><span class="nx">Int</span><span class="p">]</span> <span class="o">=</span> <span class="nx">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nx">testList</span> <span class="nx">match</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nx">testList</span><span class="err">@</span><span class="nx">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">_</span><span class="o">*</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s2">&#34;a list beginning with 1, binding&#34;</span>
+  <span class="k">case</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="s2">&#34; nothing match  binding&#34;</span>
+<span class="p">}</span>
+
+<span class="c1">// testListbinding: List[Int] = List(1, 1)
+</span><span class="c1">// res24: String = a list beginning with 1, binding
+</span><span class="c1"></span>
+<span class="nx">testList</span> <span class="nx">match</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nx">x</span> <span class="err">@</span> <span class="nx">List</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">_</span><span class="o">*</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">s</span><span class="s2">&#34;$x&#34;</span>
+  <span class="k">case</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="s2">&#34; nothing match  binding&#34;</span>
+<span class="p">}</span>
+
+<span class="c1">// res25: String = List(1, 1)
+</span></code></pre></div>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#infix-operation-patterns">Infix Operation Patterns:</a></p>
+
+<blockquote>
+<p>Pattern3  ::=  SimplePattern {id [nl] SimplePattern}</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
+</span><span class="cm">  *   Infix operator is a shorthand for the constructor or extractor pattern
+</span><span class="cm">  *   examples infix operator:
+</span><span class="cm">  *   
+</span><span class="cm">  *   infix operator for syntactic sugar
+</span><span class="cm">  *   ref: https://docs.scala-lang.org/tour/operators.html.
+</span><span class="cm">  *   
+</span><span class="cm">  *   examples of infix operators:
+</span><span class="cm">  *   +, -, *, ++,::,:+, etc and are just methods.
+</span><span class="cm">  *
+</span><span class="cm">  */</span>
+
+<span class="c1">//normal notation
+</span><span class="c1"></span><span class="mf">10.</span><span class="o">+</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1">//infix notation
+</span><span class="c1"></span><span class="mi">10</span> <span class="o">+</span> <span class="mi">20</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nx">Vec</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span> <span class="nx">Double</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">Double</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">def</span> <span class="o">+</span><span class="p">(</span><span class="nx">that</span><span class="o">:</span> <span class="nx">Vec</span><span class="p">)</span> <span class="o">=</span> <span class="nx">Vec</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">that</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="nx">that</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">val</span> <span class="nx">vector1</span> <span class="o">=</span> <span class="nx">Vec</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="nx">val</span> <span class="nx">vector2</span> <span class="o">=</span> <span class="nx">Vec</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+
+<span class="c1">//normal notation
+</span><span class="c1"></span><span class="nx">val</span> <span class="nx">vector3</span> <span class="o">=</span> <span class="nx">vector1</span><span class="p">.</span><span class="o">+</span><span class="p">(</span><span class="nx">vector2</span><span class="p">)</span>
+<span class="nx">vector3</span><span class="p">.</span><span class="nx">x</span>  <span class="c1">// 3.0
+</span><span class="c1"></span><span class="nx">vector3</span><span class="p">.</span><span class="nx">y</span>  <span class="c1">// 3.0
+</span><span class="c1"></span>
+<span class="c1">//infix notation
+</span><span class="c1"></span><span class="nx">val</span> <span class="nx">vector4</span> <span class="o">=</span> <span class="nx">vector1</span> <span class="o">+</span> <span class="nx">vector2</span>
+<span class="nx">vector4</span><span class="p">.</span><span class="nx">x</span>  <span class="c1">// 3.0
+</span><span class="c1"></span><span class="nx">vector4</span><span class="p">.</span><span class="nx">y</span>  <span class="c1">// 3.0
+</span><span class="c1"></span>
+<span class="c1">//::
+</span><span class="c1"></span><span class="nx">val</span> <span class="nx">xs</span><span class="o">:</span><span class="nx">List</span><span class="p">[</span><span class="nx">Int</span><span class="p">]</span> <span class="o">=</span> <span class="nx">List</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nx">xs</span> <span class="nx">match</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nx">first</span> <span class="o">::</span> <span class="nx">second</span> <span class="o">::</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="nx">println</span><span class="p">(</span><span class="nx">s</span><span class="s2">&#34;the first element: $first and the second: $second&#34;</span> <span class="p">)</span>
+  <span class="k">case</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// the first element: 20 and the second: 2
+</span><span class="c1">// res33: AnyVal = ()
+</span><span class="c1"></span>
+<span class="nx">xs</span> <span class="nx">match</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nx">rest</span> <span class="o">+:</span> <span class="nx">tail</span> <span class="p">=&gt;</span> <span class="nx">println</span><span class="p">(</span><span class="nx">s</span><span class="s2">&#34;tail elements: $tail&#34;</span> <span class="p">)</span>
+  <span class="k">case</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// tail elements: List(2, 3, 4) 
+</span><span class="c1">// res34: AnyVal = ()
+</span><span class="c1"></span>
+
+<span class="cm">/**
+</span><span class="cm">  *   infix notation like tuples
+</span><span class="cm">  *   remember e(p1, p2), where e is the extractor and p1 and p2
+</span><span class="cm">  *   
+</span><span class="cm">  *   x(𝑞1,𝑝1) were X is the extractor and q1 and p1 operand (only two operands)
+</span><span class="cm">  *
+</span><span class="cm">  */</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nx">Person</span><span class="p">[</span><span class="nx">A</span><span class="p">,</span><span class="nx">B</span><span class="p">](</span><span class="nx">name</span><span class="o">:</span> <span class="nx">A</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="nx">B</span><span class="p">)</span>
+
+<span class="nx">val</span> <span class="nx">student</span><span class="o">:</span> <span class="nx">Person</span><span class="p">[</span><span class="nb">String</span><span class="p">,</span><span class="nx">Int</span><span class="p">]</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&#34;Luis&#34;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="nx">val</span> <span class="nx">student1</span><span class="o">:</span> <span class="nx">Person</span><span class="p">[</span><span class="nb">String</span><span class="p">,</span><span class="nx">Int</span><span class="p">]</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&#34;Peter&#34;</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+
+<span class="nx">Seq</span><span class="p">(</span><span class="nx">student</span><span class="p">,</span> <span class="nx">student1</span><span class="p">)</span> <span class="nx">foreach</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nx">name</span> <span class="nx">Person</span> <span class="nx">age</span> <span class="p">=&gt;</span> <span class="nx">println</span><span class="p">(</span><span class="nx">s</span><span class="s2">&#34;$name with $age&#34;</span><span class="p">)</span>
+  <span class="k">case</span> <span class="nx">currentstudent</span> <span class="p">=&gt;</span> <span class="nx">println</span><span class="p">(</span><span class="nx">s</span><span class="s2">&#34;Unknown: $currentstudent&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// student: Person[String,Int] = Person(Luis,20)
+</span><span class="c1"></span>
+<span class="c1">// student1: Person[String,Int] = Person(Peter,23)
+</span><span class="c1"></span>
+<span class="c1">// Luis with 20
+</span><span class="c1">// Peter with 23
+</span><span class="c1">// res36: Unit = ()
+</span></code></pre></div>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#pattern-alternatives">Pattern Alternatives:</a></p>
+
+<blockquote>
+<p>Pattern   ::=  Pattern1 { ‘|’ Pattern1 }</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">def</span> <span class="nx">matchDifferentPatterns</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span> <span class="nx">Any</span><span class="p">)</span><span class="o">:</span> <span class="nx">Any</span> <span class="o">=</span> <span class="nx">x</span> <span class="nx">match</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="p">=&gt;</span> <span class="s2">&#34;one or two&#34;</span>
+  <span class="k">case</span> <span class="s2">&#34;two&#34;</span> <span class="p">=&gt;</span> <span class="mi">2</span>
+  <span class="k">case</span> <span class="mi">3</span> <span class="o">|</span> <span class="mi">4</span> <span class="p">=&gt;</span> <span class="s2">&#34;three or four&#34;</span>  
+  <span class="k">case</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">Int</span> <span class="p">=&gt;</span> <span class="s2">&#34;scala.Int&#34;</span>
+  <span class="k">case</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="s2">&#34;many&#34;</span>
+<span class="p">}</span>
+
+<span class="nx">matchDifferentPatterns</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// res37: Any = one or two
+</span><span class="c1"></span>
+<span class="nx">matchDifferentPatterns</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// res38: Any = one or two
+</span><span class="c1"></span>
+<span class="nx">matchDifferentPatterns</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">// res39: Any = three or four
+</span><span class="c1"></span>
+<span class="nx">matchDifferentPatterns</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">// res40: Any = three or four
+</span></code></pre></div>
+<p><a href="https://www.scala-lang.org/files/archive/spec/2.12/08-pattern-matching.html#irrefutable-patterns">Irrefutable Patterns:</a></p>
+
+<blockquote>
+<p>SimplePattern   ::=  StableId</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//𝑝 is a typed pattern 𝑥:𝑇′, and 𝑇&lt;:𝑇′,
+</span><span class="c1"></span><span class="kr">abstract</span> <span class="k">class</span> <span class="nx">Device</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nx">Phone</span><span class="p">(</span><span class="nx">model</span><span class="o">:</span> <span class="nb">String</span><span class="p">)</span> <span class="k">extends</span> <span class="nx">Device</span> <span class="p">{</span>
+  <span class="nx">def</span> <span class="nx">screenOff</span> <span class="o">=</span> <span class="s2">&#34;Turning screen off&#34;</span>
+<span class="p">}</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nx">Computer</span><span class="p">(</span><span class="nx">model</span><span class="o">:</span> <span class="nb">String</span><span class="p">)</span> <span class="k">extends</span> <span class="nx">Device</span> <span class="p">{</span>
+  <span class="nx">def</span> <span class="nx">screenSaverOn</span> <span class="o">=</span> <span class="s2">&#34;Turning screen saver on...&#34;</span>
+<span class="p">}</span>
+
+<span class="nx">def</span> <span class="nx">goIdle</span><span class="p">(</span><span class="nx">device</span><span class="o">:</span> <span class="nx">Device</span><span class="p">)</span> <span class="o">=</span> <span class="nx">device</span> <span class="nx">match</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nx">p</span><span class="o">:</span> <span class="nx">Phone</span> <span class="p">=&gt;</span> <span class="nx">p</span><span class="p">.</span><span class="nx">screenOff</span>
+  <span class="k">case</span> <span class="nx">c</span><span class="o">:</span> <span class="nx">Computer</span> <span class="p">=&gt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">screenSaverOn</span>
+<span class="p">}</span>
+
+
+<span class="c1">//𝑝 is a constructor pattern 𝑐(𝑝1,…,𝑝𝑛)
+</span><span class="c1"></span>
+<span class="nx">sealed</span> <span class="kr">abstract</span> <span class="k">class</span> <span class="nx">Furniture</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nx">Couch</span><span class="p">()</span> <span class="k">extends</span> <span class="nx">Furniture</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nx">Chair</span><span class="p">()</span> <span class="k">extends</span> <span class="nx">Furniture</span>
+
+<span class="nx">def</span> <span class="nx">findPlaceToSit</span><span class="p">(</span><span class="nx">piece</span><span class="o">:</span> <span class="nx">Furniture</span><span class="p">)</span><span class="o">:</span> <span class="nb">String</span> <span class="o">=</span> <span class="nx">piece</span> <span class="nx">match</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nx">a</span><span class="o">:</span> <span class="nx">Couch</span> <span class="p">=&gt;</span> <span class="s2">&#34;Lie on the couch&#34;</span>
+  <span class="k">case</span> <span class="nx">b</span><span class="o">:</span> <span class="nx">Chair</span> <span class="p">=&gt;</span> <span class="s2">&#34;Sit on the chair&#34;</span>
+<span class="p">}</span>
+</code></pre></div>]]></content>
+		</item>
 		
 		<item>
 			<title>Pattern Matching</title>
